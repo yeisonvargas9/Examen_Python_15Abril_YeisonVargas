@@ -1,0 +1,10 @@
+[
+    {
+        "codigo": "1",
+        "tipo": "entrada",
+        "bodega": "norte",
+        "cantidad": 99,
+        "descripcion": "abc",
+        "fecha": "2026-04-15 19:54"
+    }
+]

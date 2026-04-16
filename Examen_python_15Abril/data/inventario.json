@@ -1,0 +1,22 @@
+[
+    {
+        "codigo": "1",
+        "nombre": "kk",
+        "proveedor": "hh",
+        "bodegas": {
+            "norte": 99,
+            "centro": 0,
+            "oriente": 0
+        }
+    },
+    {
+        "codigo": "02",
+        "nombre": "fg",
+        "proveedor": "fdfdfg",
+        "bodegas": {
+            "norte": 0,
+            "centro": 0,
+            "oriente": 0
+        }
+    }
+]

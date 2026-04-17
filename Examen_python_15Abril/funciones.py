@@ -2,9 +2,16 @@ import json
 import os
 from datetime import datetime
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-ARCHIVO_INVENTARIO = "data/inventario.json"
-ARCHIVO_HISTORIAL = "data/historial.json"
+ARCHIVO_INVENTARIO = os.path.join(BASE_DIR, "data", "inventario.json")
+ARCHIVO_HISTORIAL = os.path.join(BASE_DIR, "data", "historial.json")
+
+def asegurarCarpeta():
+    ruta = os.path.join(BASE_DIR, "data")
+    if not os.path.exists(ruta):
+        os.makedirs(ruta)
+asegurarCarpeta()
 
 def cargarDatos():
     if os.path.exists(ARCHIVO_INVENTARIO):

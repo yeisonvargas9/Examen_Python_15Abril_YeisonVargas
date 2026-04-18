@@ -178,10 +178,10 @@ def historial(datos):
 
 def transferir(datos):
 
-    codigoProducto = input("Código: ")
-    producto = buscar(datos)
+    codigo = input("Código: ")
+    producto = buscarProducto(datos,codigo)
 
-    if codigoProducto != producto:
+    if not producto:
         print("No existe")
         return
 
@@ -191,15 +191,13 @@ def transferir(datos):
         print("Bodega inválida")
         return
     
-
     bodegaDestino = input("Bodega de destino: ")
     if bodegaDestino not in ["norte", "centro", "oriente"]:
         print("Bodega inválida")
         return
 
-    
     cantidad = input("cantidad: ")
-
+    
     if not cantidad.isdigit():
         print("Cantidad inválida")
         return
@@ -213,13 +211,15 @@ def transferir(datos):
     descripcion = input("Descripción: ")
     
     producto["bodegas"][bodegaOrigen] -= cantidad
+    producto["bodegas"][bodegaDestino] += cantidad
     guardarDatos(datos)
 
 
     transferencia = {
-        "codigo": codigoProducto,
+        "codigo": codigo,
         "tipo": "transferido",
-        "bodega": bodegaOrigen,
+        "bodega origen": bodegaOrigen,
+        "bodega destino": bodegaDestino,
         "cantidad": cantidad,
         "descripcion": descripcion,
         "fecha": fecha()
